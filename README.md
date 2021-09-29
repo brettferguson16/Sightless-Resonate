@@ -1,2 +1,2 @@
 # Sightless Resonate
-Developing the Game LOL
+Sightless Resonate redaMe file
