@@ -1,2 +1,2 @@
 # Sightless Resonate
-Sightless Resonate redaMe file
+Sightless Resonate readMe file
