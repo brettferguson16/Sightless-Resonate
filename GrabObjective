@@ -1,0 +1,41 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GrabObjective1 : MonoBehaviour
+{
+
+    public float PickUpDisance;
+    public GameObject gunTip;
+
+    // Update is called once per frame
+    void Update()
+    {
+        pickup();
+    }
+    private void pickup()
+    {
+
+        if (Input.GetMouseButtonDown(1))
+        {
+
+            RaycastHit hit;
+            if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, PickUpDisance))
+            {
+
+
+                //put objective scipt on object you want to pickup
+                Objective objective = hit.transform.gameObject.GetComponent<Objective>();//hit.GetComponet<Health>();
+                objective.pickup();
+
+
+            }
+        }
+
+
+
+
+
+    }
+
+}
