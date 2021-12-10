@@ -1,0 +1,40 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class Health : MonoBehaviour
+{
+    public Image healthBar;
+    public int curHealth = 0;
+    public int maxHealth = 100;
+    public int damage = 10;
+
+
+    void Start()
+    {
+        
+        curHealth = maxHealth;
+        SetHealthBar();
+    }
+
+    public void OnDamage(int damage)
+    {
+            curHealth -= damage;
+            SetHealthBar();
+    }
+      
+    
+
+    public void SetHealthBar()
+    {
+        int myHealth = curHealth / maxHealth;
+        healthBar.transform.localScale = new Vector3(Mathf.Clamp(myHealth, 0, 1), healthBar.transform.localScale.y, healthBar.transform.localScale.z);
+    }
+
+    public void Death()
+    {
+        Debug.Log("DEAD :(");
+        Destroy(gameObject);
+    }
+}
