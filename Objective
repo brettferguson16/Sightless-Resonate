@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+
+//put me on the quest object
+public class Objective : MonoBehaviour
+{
+    public bool objective_Compleate;
+
+    public Text m_MyText;
+
+    public void pickup()
+    {
+        objective_Compleate = true;
+        ChangeText();
+        Destroy(gameObject);
+    }
+
+
+    public void ChangeText()
+    {
+        m_MyText.text = "";
+    }
+
+}
